@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head'); %>
+  </head>
+  <body class="container">
+    <header><%- include('./partials/header'); %></header>
+
+    <main>
+      <div class="jumbotron">
+        <h1 class="alert alert-danger">
+          Oops! <%= message %>. You'll be redirected in <span id="time">5</span> seconds
+        </h1>
+      </div>
+    </main>
+
+    <footer><%- include('./partials/footer'); %></footer>
+    <script>
+      const timeContainer = document.getElementById('time');
+      let time = 5;
+      setInterval(() => {
+        timeContainer.innerText = time;
+        time--;
+      }, 1000);
+      setTimeout(() => {
+        window.location.href = '/';
+      }, 5000);
+    </script>
+  </body>
+</html>

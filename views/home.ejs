@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head'); %>
+  </head>
+  <body class="container">
+    <header><%- include('./partials/header'); %></header>
+
+    <main>
+      <div class="jumbotron">
+        <h1>This is great</h1>
+        <ul>
+          <% petTypes.forEach((petType)=> { %>
+          <li>
+            <a class="text-decoration-none" href="/animals/<%= petType.type.toLowerCase() %>"
+              ><%= petType.type %> <%= petType.emoji %>
+            </a>
+          </li>
+          <% }); %>
+        </ul>
+      </div>
+    </main>
+
+    <footer><%- include('./partials/footer'); %></footer>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head'); %>
+  </head>
+  <body class="container">
+    <header><%- include('./partials/header'); %></header>
+
+    <main>
+      <div class="jumbotron">
+        <h1>This is <%= selectedPet.name %> profile and it's <%= selectedPet.age %> years old</h1>
+        <ul>
+          <li>Breed: <%= selectedPet.breed %></li>
+          <li>Description: <%= selectedPet.description %></li>
+        </ul>
+        <img src="<%= selectedPet.url %>" alt="<%= selectedPet.name %>" width="300px" />
+      </div>
+    </main>
+
+    <footer><%- include('./partials/footer'); %></footer>
+  </body>
+</html>
